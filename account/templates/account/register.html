@@ -8,6 +8,39 @@
   <form method="post">
     {{ user_form.as_p }}
     {% csrf_token %}
-    <p><input type="submit" value="Create my account"></p>
+    <p><input type="submit" id ="sbtn" value="Create my account"></p>
   </form>
+  <script>
+    let pass1 = document.getElementById('id_password');
+    let pass2 = document.getElementById('id_password2');
+    let submitbtn = document.getElementById('sbtn');
+    console.log(submitbtn);
+    pass2.addEventListener('change', ()=>{
+
+      if (pass1.value !== pass2.value || pass2.value.length < 6){
+        submitbtn.disabled = true;
+      }
+      else{
+        submitbtn.disabled = false;
+      }
+    })
+    pass1.addEventListener('change', ()=>{
+      if (pass1.value !== pass2.value || pass1.value.length < 6){
+        submitbtn.disabled = true;
+      }
+      else{
+        submitbtn.disabled = false;
+      }
+    })
+    submitbtn.addEventListener('click',() =>{
+    
+      if( pass1.value === pass2.value || pass1.value.length < 6) {
+        return true;
+      }
+      else {
+        alert(`password 1 and password 2 does not match `);
+        return false;
+      }
+    } )
+  </script>
 {% endblock %}

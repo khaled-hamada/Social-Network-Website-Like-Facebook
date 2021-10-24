@@ -19,5 +19,15 @@
       <p><input type="submit" value="Log-in"></p>
     </form>
     <p><a href="{% url "account:password-reset" %}">Forgotten your password?</a></p>
-    </div>
+    <p>Please, use the following form to log-in. If you don't have an
+      account <a href="{% url 'account:register' %}">register here</a></p>
+  </div>
+  <div class="social">
+    <ul>
+      <li class="facebook">
+        <a href="{% url "social:begin" "facebook" %}">Sign in with
+          Facebook</a>
+      </li>
+    </ul>
+  </div>
 {% endblock %}
