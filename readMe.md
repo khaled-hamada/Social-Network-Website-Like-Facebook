@@ -7,6 +7,15 @@ More details soon ..
 3. add social authentiication to the website using facebook, google, twitter, ....
 
 
+**ch5**
+1. create Image model with many to many realtion to both user  model.
+2. create a javascript booklet to allow users to share and save images from other sites.
+3. create cutom ajax decorator and paginator.
+4. create an infinte scroll functionality.
+5. create a web crawler to download and save images from other sites, Note i will make it a celery task soon to run in the background.
+6. create custom forms with custom validations
+7. send ajax requests to like/dislike images to avoid loading page every time
+
 
 *run HTTPS locally*
 python manage.py runserver_plus --cert-file cert.crt 
