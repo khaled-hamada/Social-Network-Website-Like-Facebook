@@ -1,2 +1,4 @@
-venv
-media
+venv/
+/media/
+/media/users/.*
+social/.env

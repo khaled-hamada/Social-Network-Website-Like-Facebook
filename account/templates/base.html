@@ -13,9 +13,9 @@
       <li {% if section == "dashboard" %}class="selected"{% endif %}>
         <a href="{% url "account:dashboard" %}">My dashboard</a>
       </li>
-      <li {% if section == "images" %}class="selected"{% endif %}>
-        <a href="#">Images</a>
-      </li>
+    <li {% if section == "images" %}class="selected" {% endif %}>
+      <a href="{% url "images:list" %}">Images</a>
+    </li>
       <li {% if section == "people" %}class="selected"{% endif %}>
         <a href="#">People</a>
       </li>
@@ -46,5 +46,29 @@
     {% block content %}
     {% endblock %}
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js"></script>
+  <script>
+    var csrftoken = Cookies.get('csrftoken');
+    
+    function csrfSafeMethod(method){
+      // methods have no side effects on the server 
+      return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+    $.ajaxSetup({
+      beforeSend: function(xhr, settings){
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain){
+          xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+      }
+    });
+    // (function($){
+       $(document).ready(function () {
+        {% block domready %}
+        {% endblock %}
+      });
+    // })(jQuery);
+   
+  </script>
 </body>
 </html>
