@@ -17,5 +17,8 @@ More details soon ..
 7. send ajax requests to like/dislike images to avoid loading page every time
 
 
+**ch6**
+1. create the following/follwers subsystem
+
 *run HTTPS locally*
 python manage.py runserver_plus --cert-file cert.crt 
