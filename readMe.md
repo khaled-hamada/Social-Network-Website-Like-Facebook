@@ -1,3 +1,10 @@
+to use this application
+1. clone the code to your local machine
+2. create a virtual env. and install the requirements.txt 
+using pip install -r requirements.txt
+3. create a .env file in the same directory as settings.py and grab env variables from it, you can follow this link
+https://alicecampkin.medium.com/how-to-set-up-environment-variables-in-django-f3c4db78c55f
+-----------------------------------------
 This Project will be build upon the next 3 chapters of Django 3 by example book ch 4,5,6
 ----------------------------------------------------------------------------------------
 More details soon ..
@@ -19,6 +26,9 @@ More details soon ..
 
 **ch6**
 1. create the following/follwers subsystem
-
+2. create activity stream using generic relationship to store users actions and feed them
+3. use signals for database denormalization
+4. use Redis to store item views,and to buils an image ranking with Redis
+and many many more ..
 *run HTTPS locally*
 python manage.py runserver_plus --cert-file cert.crt 
