@@ -178,3 +178,9 @@ ABSOLUTE_URL_OVERRIDES ={
     'auth.user': lambda u: reverse_lazy('account:user_detail', args=[u.username]),
 
 }
+
+
+# integrate redis 
+REDIS_HOST = env('REDIS_HOST')
+REDIS_PORT = env('REDIS_PORT')
+REDIS_DB = env('REDIS_DB')

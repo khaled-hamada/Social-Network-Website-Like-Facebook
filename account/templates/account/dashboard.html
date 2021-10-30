@@ -19,5 +19,11 @@
           your profile</a> or <a href="{% url "account:password-change" %}">change your
           password</a>.
     </p>
+
+    <div id="action-list">
+      {% for action in actions %}
+        {% include "actions/action/detail.html"  %}
+      {%endfor%}
+    </div>
    
   {% endblock %}

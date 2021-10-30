@@ -1,3 +1,4 @@
+from django.conf import settings
 from .models import Action
 import datetime
 
@@ -22,4 +23,12 @@ def create_action(user, verb, target=None):
         return True
     return False
 
+
+def redis_connect():
+    import redis
+    r = redis.Redis(host=settings.REDIS_HOST,
+                    port=settings.REDIS_PORT,
+                    db=settings.REDIS_DB)
+    
+    return r
 
